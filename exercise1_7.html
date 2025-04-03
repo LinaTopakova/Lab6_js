@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Reverse</title>
+    <script>
+            function generateRandomArray(n) {
+            const randomNumbers = [];
+            for (let i = 0; i < n; i++) {
+                randomNumbers.push(Math.floor(Math.random() * 100)); 
+            }
+            return randomNumbers;
+        }
+
+        function arrayReverse() {
+
+            let n = parseInt(prompt("Введите n:"));
+            if (isNaN(n) || n <= 0) {
+                alert("Введите n > 0");
+                arrayReverse();
+            }
+
+            const array = generateRandomArray(n);
+            alert("До: " + array);
+            let output = '';
+            
+            for (let i = array.length - 1; i >= 0; i--) {
+                output += array[i] + ' ';
+
+                if ((array.length - i) % 5 === 0) {
+                    output += '\n';
+                }
+            }
+            alert(output);
+        }
+    </script>
+</head>
+<body onload="arrayReverse()">
+</body>
+</html>
