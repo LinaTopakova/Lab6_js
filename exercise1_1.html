@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вычисление sin(x)</title>
+    <script>
+        function calculateSin() {
+
+            let x = prompt("Введите x:");
+            
+            if (x !== null && x.trim() !== "" && !isNaN(x)) {
+                x = parseFloat(x);
+                alert("sin(" + x + ") = " + Math.sin(x));
+
+            } else {
+                alert("Пожалуйста, введите корректное число.");
+            }
+        }
+    </script>
+</head>
+<body onload="calculateSin()">
+</body>
+</html>
