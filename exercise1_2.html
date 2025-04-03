@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка принадлежности точки квадрату</title>
+    <script>
+        function promptForNumber(message) {
+            const input = prompt(message);
+            if (input === null) {
+                return null; 
+            }
+            const number = parseFloat(input);
+            if (!isNaN(number)) {
+                return number; 
+            }
+            alert("Ошибка: введите корректное число.");
+            return promptForNumber(message); 
+        }
+
+        function isPointInSquare(x1, y1, x2, y2, x, y) {
+            const minX = Math.min(x1, x2);
+            const maxX = Math.max(x1, x2);
+            const minY = Math.min(y1, y2);
+            const maxY = Math.max(y1, y2);
+            return x >= minX && x <= maxX && y >= minY && y <= maxY;
+        }
+
+        function checkPointInSquare() {
+            const x1 = promptForNumber("Введите x1:");
+            if (x1 === null) return; 
+            const y1 = promptForNumber("Введите y1:");
+            if (y1 === null) return; 
+            const x2 = promptForNumber("Введите x2:");
+            if (x2 === null) return; 
+            const y2 = promptForNumber("Введите y2:");
+            if (y2 === null) return; 
+
+            const x = promptForNumber("Введите x:");
+            if (x === null) return; 
+            const y = promptForNumber("Введите y:");
+            if (y === null) return; 
+
+            if (isPointInSquare(x1, y1, x2, y2, x, y)) {
+                alert("Точка принадлежит квадрату.");
+            } else {
+                alert("Точка не принадлежит квадрату.");
+            }
+        }
+    </script>
+</head>
+<body onload="checkPointInSquare()">
+</body>
+</html>
