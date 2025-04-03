@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Очистка содержимого</title>
+    <script>
+        function clear(elem) {
+            elem.innerHTML = ''; 
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const list = document.getElementById('list');
+            clear(list);
+        });
+        
+    </script>
+</head>
+<body>
+    <ol id="list">
+        <li>Привет</li>
+        <li>Мир</li>
+    </ol>
+</body>
+</html>

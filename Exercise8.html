@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание списка</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const numberOfItems = prompt("Введите количество пунктов для списка:");
+
+            if (numberOfItems && !isNaN(numberOfItems) && numberOfItems > 0) {
+                const ul = document.createElement('ul'); 
+
+                for (let i = 0; i < numberOfItems; i++) {
+                    const itemContent = prompt("Введите содержимое пункта" + i);
+                    const li = document.createElement('li'); 
+                    li.textContent = itemContent; 
+                    ul.appendChild(li); 
+                }
+
+                document.body.appendChild(ul);
+            } else {
+                alert("Не корректное число");
+            }
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
