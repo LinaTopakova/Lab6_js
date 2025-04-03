@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Определение доли латинских букв</title>
+    <script>
+        function calculateLetter() {
+            const str = prompt("Введите строку:");
+
+            if (str.trim() === "") {
+                alert("Вы не ввели строку. Пожалуйста, попробуйте снова.");
+                calculateLetter();
+            }
+
+            let totalLetters = 0; 
+            let latinLettersCount = 0; 
+
+            for (let char of str) {
+
+                if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) {
+                    latinLettersCount++;
+                }
+                totalLetters++;
+            }
+            alert("Доля латинских букв: " + (latinLettersCount / totalLetters) * 100);
+        }
+    </script>
+</head>
+<body onload="calculateLetter()">
+    <h2>Задание 1.5</h2>
+    <h3>Пользователь вводит строку s. Определить в ней долю (в процентах)
+        символов, являющихся буквами латинского алфавита</h3>
+</body>
+</html>
