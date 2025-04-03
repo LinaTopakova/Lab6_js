@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка Email</title>
+    <script>
+        function checkEmail() {
+            const email = prompt("Введите ваш адрес электронной почты:");
+
+            if (!email.includes('@')) {
+                alert("Ошибка: адрес электронной почты не содержит '@'.");
+                checkEmail();
+            } else {
+                alert("Вы ввели корректный адрес");
+            }
+        }
+    </script>
+</head>
+<body onload="checkEmail()">
+</body>
+</html>
