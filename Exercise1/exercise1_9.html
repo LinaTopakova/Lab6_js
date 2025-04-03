@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить дни к текущей дате</title>
+    <script>
+        function addDays() {
+            const n = parseInt(prompt("Введите n:"));
+            if (isNaN(n) || n < 0) {
+                alert("Error");
+                return addDays(); 
+            }
+
+            const currentDate = new Date(); 
+            currentDate.setDate(currentDate.getDate() + n); 
+            
+            alert("Новая дата: " + currentDate.toLocaleDateString("ru-RU")); 
+        }
+    </script>
+</head>
+<body onload="addDays()">
+</body>
+</html>

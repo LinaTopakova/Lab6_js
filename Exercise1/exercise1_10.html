@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сколько месяцев до 1 сентября</title>
+    <script>
+        function monthsUntilSeptember() {
+            const today = new Date();
+            let currentYear = today.getFullYear();
+            let septemberDate = new Date(currentYear, 8, 1);
+
+            if (today > septemberDate) {
+                septemberDate.setFullYear(currentYear + 1);
+            }
+
+            const monthsRemaining = (septemberDate.getFullYear() - today.getFullYear()) * 12 + (septemberDate.getMonth() - today.getMonth());
+
+            alert("Осталось месяцев до 1 сентября: " + monthsRemaining);
+        }
+    </script>
+</head>
+<body onload="monthsUntilSeptember()">
+</body>
+</html>
