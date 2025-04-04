@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание Разметки</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        
+            const header = document.createElement('header');
+
+            const main = document.createElement('main');
+            main.className = 'content';
+
+            const aside = document.createElement('aside');
+
+            const section = document.createElement('section');
+
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'header-d';
+            headerDiv.textContent = 'Выберите лицо, которое нравится вам больше остальных:';
+
+            const displayDiv = document.createElement('div');
+            displayDiv.className = 'display';
+
+            const cardDiv = document.createElement('div');
+            cardDiv.className = 'card';
+
+            const img = document.createElement('img');
+            img.src = 'https://thispersondoesnotexist.com';
+            img.alt = 'Avatar';
+
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.className = 'description';
+
+            const p = document.createElement('p');
+            p.textContent = 'Персона номер 1';
+
+            descriptionDiv.appendChild(p); 
+            cardDiv.appendChild(img); 
+            cardDiv.appendChild(descriptionDiv); 
+            displayDiv.appendChild(cardDiv); 
+            section.appendChild(headerDiv); 
+            section.appendChild(displayDiv); 
+            main.appendChild(aside); 
+            main.appendChild(section); 
+            document.body.appendChild(header);
+            document.body.appendChild(main); 
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
