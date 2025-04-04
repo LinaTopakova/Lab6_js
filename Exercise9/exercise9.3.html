@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание Разметки</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const displayDiv = document.querySelector('.display'); 
+            let cardCount = 0;
+            const names = ['Александр', 'Мария', 'Дмитрий', 'Екатерина', 'Сергей', 'Анна', 'Иван', 'Полина','Ольга', 'Максим', 'Наталья'];
+            const surnames = ['Иванов(a)', 'Петров(a)', 'Сидоров(a)', 'Кузнецов(a)', 'Смирнов(a)', 'Попов(a)', 'Лебедев(a)', 'Соловьев(a)', 'Васильев(a)', 'Зайцев(a)', 'Топаков(а)'];
+
+            const getRandomName = () => {
+                const randomName = names[Math.floor(Math.random() * names.length)];
+                const randomSurname = surnames[Math.floor(Math.random() * surnames.length)];
+                return `${randomName} ${randomSurname}`;
+            };
+
+            const createCard = () => {
+                if (cardCount < 6) {
+                    const cardDiv = document.createElement('div');
+                    cardDiv.className = 'card';
+
+                    const img = document.createElement('img');
+                    img.src = `https://thispersondoesnotexist.com/?${cardCount + 1}`;
+                    img.alt = 'Avatar';
+
+                    const descriptionDiv = document.createElement('div');
+                    descriptionDiv.className = 'description';
+
+                    const p = document.createElement('p');
+                    p.textContent = getRandomName(); 
+
+                    descriptionDiv.appendChild(p);
+                    cardDiv.appendChild(img);
+                    cardDiv.appendChild(descriptionDiv);
+                    displayDiv.appendChild(cardDiv);
+                    cardCount++;
+                } else {
+                    clearInterval(interval);
+                }
+            };
+
+            const interval = setInterval(createCard, 2000);
+        });
+    </script>
+</head>
+<body>
+    <header></header>
+    <main class="content">
+        <aside></aside>
+        <section>
+            <div class="header-d">Выберите лицо, которое нравится вам больше остальных:</div>
+            <div class="display"></div>
+        </section>
+    </main>
+</body>
+</html>
